@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 
 // @styles
 import './Card.scss';
+import sassColors from '../../globals/scss/_colors.scss';
 
 // Setting material-ui classes
 const styles = {
@@ -22,20 +23,20 @@ const styles = {
     quizCardOption__button: {
         justifyContent: 'flex-start',
         fontSize: '1.10rem',
-        backgroundColor: '#60607e',
-        color: '#fff',
+        backgroundColor: sassColors.purple,
+        color: sassColors.white,
         '&:hover': {
-            background: '#b39ddb'
+            background: sassColors.lightPurple
         }
     },
     quizCardOption__button_correct: {
-        backgroundColor: '#a5d6a7',
+        backgroundColor: sassColors.lightGreen,
         '&:disabled': {
-            color: '#fff'
+            color: sassColors.white
         }
     },
     quizCardOption__button_incorrect: {
-        backgroundColor: '#ef9a9a'
+        backgroundColor: sassColors.lightRed
     }
 };
 
