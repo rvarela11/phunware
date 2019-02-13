@@ -1,5 +1,5 @@
 // @vendors
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -20,32 +20,79 @@ const styles = {
         minHeight: '50vh'
     },
     quizCardOption__button: {
-        width: '100%',
         justifyContent: 'flex-start',
-        fontSize: '1.10rem'
+        fontSize: '1.10rem',
+        backgroundColor: '#60607e',
+        color: '#fff',
+        '&:hover': {
+            background: '#b39ddb'
+        }
+    },
+    quizCardOption__button_correct: {
+        backgroundColor: '#a5d6a7',
+        '&:disabled': {
+            color: '#fff'
+        }
+    },
+    quizCardOption__button_incorrect: {
+        backgroundColor: '#ef9a9a'
     }
 };
 
-const QuizCard = (props) => {
-    const { classes, item } = props;
-    return (
-        <Card className={classes.quizCard}>
-            <CardContent>
-                <Typography variant="h5" component="h2">
-                    {item.question}
-                </Typography>
-                <div className="quizCard__options">
-                    { item.options.map((item, index) => (
-                        <CardActions key={index}>
-                            <Button className={classes.quizCardOption__button} color="primary" size="large">{item}</Button>
-                        </CardActions>
-                    ))
-                    }
-                </div>
-            </CardContent>
-        </Card>
-    );
-};
+class QuizCard extends Component {
+    state = {
+        indexOfCorrectAnswer: null,
+        isQuestionAnswered: false
+    };
+
+    componentDidMount() {
+        this.getIndexOfCorrectAnswer();
+    }
+
+    // Getting the index of the correct answer
+    // This will set the green (correct) or red (incorrect) button colors after a user clicks on an option
+    getIndexOfCorrectAnswer = () => {
+        const { item: { answer, options } } = this.props;
+        options.forEach((option, index) => {
+            if (option === answer) {
+                this.setState({ indexOfCorrectAnswer: index });
+            }
+        });
+    }
+
+    render() {
+        const { classes, item } = this.props;
+        const { indexOfCorrectAnswer, isQuestionAnswered } = this.state;
+        return (
+            <Card className={classes.quizCard}>
+                <CardContent>
+                    <Typography variant="h5" component="h2">
+                        {item.question}
+                    </Typography>
+                    <div className="quizCard__options">
+                        { item.options.map((option, index) => (
+                            <CardActions key={index}>
+                                <Button
+                                    /*eslint-disable */
+                                    className={(isQuestionAnswered) ? (indexOfCorrectAnswer === index) ? [classes.quizCardOption__button_correct, classes.quizCardOption__button] : [classes.quizCardOption__button_incorrect, classes.quizCardOption__button] : classes.quizCardOption__button}
+                                    /* eslint-enable */
+                                    color="primary"
+                                    disabled={isQuestionAnswered}
+                                    fullWidth
+                                    onClick={() => this.setState({ isQuestionAnswered: true })}
+                                    size="large"
+                                >
+                                    {option}
+                                </Button>
+                            </CardActions>
+                        ))
+                        }
+                    </div>
+                </CardContent>
+            </Card>
+        );
+    }
+}
 
 QuizCard.propTypes = {
     classes: PropTypes.object.isRequired,
