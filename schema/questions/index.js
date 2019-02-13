@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const {
     GraphQLInt,
+    GraphQLList,
     GraphQLObjectType,
     GraphQLString
 } = graphql;
@@ -12,7 +13,7 @@ const QuestionsType = new GraphQLObjectType({
     fields: {
         id: { type: GraphQLInt },
         question: { type: GraphQLString },
-        options: { type: GraphQLString },
+        options: { type: new GraphQLList(GraphQLString) },
         answer: { type: GraphQLString }
     }
 });
