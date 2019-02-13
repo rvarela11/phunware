@@ -1,0 +1,21 @@
+// @styles
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/typography';
+
+.header {
+    display: flex;
+    padding: $spacing-2xs;
+    border-bottom: 1px solid $color__mid-gray;
+}
+
+.header__logo {
+    background-image: url(../../images/keep_austin_nerdy.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    flex-grow: 1;
+    height: rem(80px);
+    margin: 0;
+    padding: 0;
+}
