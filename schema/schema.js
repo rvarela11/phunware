@@ -1,9 +1,9 @@
 const graphql = require('graphql');
 
 const {
+    GraphQLList,
     GraphQLObjectType,
-    GraphQLSchema,
-    GraphQLList
+    GraphQLSchema
 } = graphql;
 
 const { QuestionsType, questionsResolver } = require('./questions');

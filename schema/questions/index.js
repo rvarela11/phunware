@@ -21,7 +21,7 @@ const ax = axios.create({
     baseURL: 'http://localhost:3000'
 });
 
-const questionsResolver = (parentValue, args) => ax.get('questions.json')
+const questionsResolver = () => ax.get('questions.json')
     .then(response => response.data)
     .catch(error => console.log('Error', error));
 
