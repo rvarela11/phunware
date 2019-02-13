@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "question": "Under what Austin bridge would you find the largest urban bat population in North America?",
+    "options": [
+      "George W. Bush Shoal Creek Bridge",
+      "Loop 360 Pennybacker Bridge",
+      "Willie Hugh Nelson Lake Austin Bridge",
+      "Ann W. Richards Congress Avenue Bridge"
+    ],
+    "answer": "Ann W. Richards Congress Avenue Bridge"
+  },
+  {
+    "id": 2,
+    "question": "For what Austin, Texas landmark has the Louisiana State Capitol building been used as a film stand-in?",
+    "options": [
+      "Blanton Museum of Art",
+      "The Texas State Capitol Building",
+      "The University of Texas Tower",
+      "The LBJ Library"
+    ],
+    "answer": "The University of Texas Tower"
+  },
+  {
+    "id": 3,
+    "question": "Which of the following choices is NOT true about the local laws in Austin, Texas?",
+    "options": [
+      "It is legal for any male over age 21 with a clear criminal history to carry concealed handguns.",
+      "It is legal for women to appear topless in public.",
+      "It is illegal to shoot a buffalo from a second story hotel window.",
+      "Both paper and plastic disposable bags are banned at all retail stores."
+    ],
+    "answer": "It is legal for any male over age 21 with a clear criminal history to carry concealed handguns."
+  },
+  {
+    "id": 4,
+    "question": "According to Forbes, between 2004 and 2014 Austin, Texas had the largest growth of jobs in the country in what field?",
+    "options": [
+      "Agricultural",
+      "Entertainment",
+      "Information Technology",
+      "Education"
+    ],
+    "answer": "Information Technology"
+  },
+  {
+    "id": 5,
+    "question": "What is the name of the lake created in downtown Austin, Texas by dams on the Colorado River?",
+    "options": [
+      "Town Lake",
+      "Lady Bird Lake",
+      "Lake Austin",
+      "Lake LBJ"
+    ],
+    "answer": "Lady Bird Lake"
+  },
+  {
+    "id": 6,
+    "question": "Select the name of the central Austin, Texas park that hosts the annual Christmas Trail of Lights and Barton Springs Pool.",
+    "options": [
+      "Emma Long Metropolitan Park",
+      "Walnut Creek Metropolitan Park",
+      "Zilker Metropolitan Park",
+      "Barton Creek Greenbelt"
+    ],
+    "answer": "Zilker Metropolitan Park"
+  },
+  {
+    "id": 7,
+    "question": "Name the popular children's story and cartoon character who has an annual birthday party in Austin, Texas.",
+    "options": [
+      "Felix the Cat",
+      "Gumby",
+      "Eeyore",
+      "Woody Woodpecker"
+    ],
+    "answer": "Eeyore"
+  },
+  {
+    "id": 8,
+    "question": "For which events would you visit Zilker Park in Austin, Texas?",
+    "options": [
+      "Willie Nelson's 4th of July Picnic, Carnaval Brasilieiro, Armadillo Christmas Bazaar",
+      "Austin City Limits Music Festival, Zilker Kite Festival, Blues on the Green",
+      "Old Settlers Music Festival, Star of Texas Fair and Rodeo, Batfest",
+      "Old Pecan Street Arts Festival, O. Henry Pun-Off, Austin Reggae Festival"
+    ],
+    "answer": "Austin City Limits Music Festival, Zilker Kite Festival, Blues on the Green"
+  },
+  {
+    "id": 9,
+    "question": "On 22 November 1963, US President John F. Kennedy was assassinated in Dallas, Texas. At what Austin, Texas landmark was he scheduled to appear later on the same date?",
+    "options": [
+      "Municipal Auditorium",
+      "Paramount Theater",
+      "Long Center for the Performing Arts",
+      "Bass Concert Hall"
+    ],
+    "answer": "Municipal Auditorium"
+  },
+  {
+    "id": 10,
+    "question": "Esther's Follies has been a well-known landmark in downtown Austin, Texas since 1977. What is Esther's Follies?",
+    "options": [
+      "A nickname for the Austin Police Department headquarters building",
+      "A dance club for women only",
+      "A comedy house featuring music, magic, and short skits",
+      "A restaurant and bar featuring big band and swing music"
+    ],
+    "answer": "A comedy house featuring music, magic, and short skits"
+  },
+  {
+    "id": 11,
+    "question": "Which is the following is a nickname of Austin?",
+    "options": [
+      "Rodeo Capital of North America",
+      "Live Music Capital of the World",
+      "RV Capital of the World",
+      "Home of the Candy Dance"
+    ],
+    "answer": "Live Music Capital of the World"
+  },
+  {
+    "id": 12,
+    "question": "What is a favorite cooling-off spot where you can take a dip without leaving the city?",
+    "options": [
+      "The Greenbelt",
+      "Barton Springs Pool",
+      "McKinney Falls State Park",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "id": 13,
+    "question": "When was Austin founded?",
+    "options": [
+      "1839",
+      "1943",
+      "1795",
+      "1900"
+    ],
+    "answer": "1839"
+  },
+  {
+    "id": 14,
+    "question": "Austin hosts an annual fun-raiser, or should that be fund-raiser? in the guise of a birthday party for which A. A. Milne character?",
+    "options": [
+      "Eeyore",
+      "Tigger",
+      "Pooh",
+      "Piglet"
+    ],
+    "answer": "Eeyore"
+  },
+  {
+    "id": 15,
+    "question": "What was Austin originally called?",
+    "options": [
+      "Coupon",
+      "Waterloo",
+      "Dogtown",
+      "Experiment"
+    ],
+    "answer": "Waterloo"
+  },
+  {
+    "id": 16,
+    "question": "What spring in Austin is considered the fourth largest spring in Texas?",
+    "options": [
+      "Hamilton Pool",
+      "Deep Eddy",
+      "Barton Springs",
+      "Krause Springs"
+    ],
+    "answer": "Barton Springs"
+  },
+  {
+    "id": 17,
+    "question": "What was Austin’s first municipal airport named?",
+    "options": [
+      "Eek Airport",
+      "Batman Airport",
+      "Moron Airport",
+      "Mueller Airport"
+    ],
+    "answer": "Mueller Airport"
+  },
+  {
+    "id": 18,
+    "question": "What is another name that Austin, Texas, is known by?",
+    "options": [
+      "Rodeo Capital of North America",
+      "Live Music Capital of the World",
+      "The Adam’s Rib of Barbecue",
+      "Silicon Hills"
+    ],
+    "answer": "Live Music Capital of the World"
+  },
+  {
+    "id": 19,
+    "question": "How many students attend the University of Texas located in Austin?",
+    "options": [
+      "50000",
+      "36000",
+      "100000",
+      "75000"
+    ],
+    "answer": "50000"
+  },
+  {
+    "id": 20,
+    "question": "What is the mascot for the University of Texas at Austin?",
+    "options": [
+      "Longhorn",
+      "Bull",
+      "Mustang",
+      "Cowboy"
+    ],
+    "answer": "Longhorn"
+  },
+  {
+    "id": 21,
+    "question": "When was the University of Texas at Austin founded?",
+    "options": [
+      "1839",
+      "1883",
+      "1901",
+      "1920"
+    ],
+    "answer": "1883"
+  }
+]
