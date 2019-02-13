@@ -18,7 +18,8 @@ import sassColors from '../../globals/scss/_colors.scss';
 const styles = {
     quizCard: {
         width: '50%',
-        minHeight: '50vh'
+        minHeight: '50vh',
+        marginBottom: '10px'
     },
     quizCardOption__button: {
         justifyContent: 'flex-start',
