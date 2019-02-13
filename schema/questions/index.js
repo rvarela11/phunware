@@ -23,7 +23,15 @@ const ax = axios.create({
 });
 
 const questionsResolver = () => ax.get('questions.json')
-    .then(response => response.data)
+    .then((response) => {
+        // Getting the max number of questions
+        // Creating a random number based on that max number
+        const dataLength = response.data.length;
+        const randomNumber = Math.floor(Math.random() * dataLength + 1);
+        // Filter to get 1 random question from question.json
+        const question = response.data.filter(({ id }) => id === randomNumber);
+        return question;
+    })
     .catch(error => console.log('Error', error));
 
 module.exports = {
