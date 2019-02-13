@@ -1,0 +1,11 @@
+// @styles
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/typography';
+
+.quiz {
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
