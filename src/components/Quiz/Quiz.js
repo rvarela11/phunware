@@ -8,8 +8,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 // @components
 import Scoreboard from '../Scoreboard/Scoreboard';
 import QuizCard from '../QuizCard/QuizCard';
+import Results from '../Results/Results';
 import NextButton from '../NextButton/NextButton';
-import FinishButton from '../FinishButton/FinishButton';
+import PlayAgainButton from '../PlayAgainButton/PlayAgainButton';
 
 // @queries
 import { getQuizInfoFromState, getQuestions } from './queries';
@@ -24,6 +25,39 @@ class Quiz extends Component {
 
     render() {
         const { questionId } = this.state;
+
+        const DisplayQuizCards = (Questions, isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
+            if (pastQuestionsLength > maxQuestions) {
+                return (<Results />);
+            }
+            return (
+                Questions.map(item => (
+                    <QuizCard
+                        key={item.id}
+                        item={item}
+                        isQuestionAnswered={isQuestionAnswered}
+                        getQuestionId={questionId => this.setState({ questionId })}
+                    />
+                ))
+            );
+        };
+
+        const DisplayQuizButtons = (isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
+            if (pastQuestionsLength > maxQuestions) {
+                return (
+                    <PlayAgainButton isQuestionAnswered={isQuestionAnswered} />
+                );
+            }
+            return (
+                <NextButton
+                    isQuestionAnswered={isQuestionAnswered}
+                    maxQuestions={maxQuestions}
+                    pastQuestionsLength={pastQuestionsLength}
+                    questionId={questionId}
+                />
+            );
+        };
+
         return (
             // Getting the pastQuestions array to pass as a varaible to the getQuestions query
             <Query query={getQuizInfoFromState}>
@@ -38,7 +72,7 @@ class Quiz extends Component {
                     }
                     return (
                         // This query will get all the questions and filter any pastQuestions
-                        <Query query={getQuestions} variables={{ pastQuestions }}>
+                        <Query query={getQuestions} variables={{ pastQuestions }} skip={pastQuestions.length > maxQuestions}>
                             {({ data: { Questions, isQuestionAnswered }, loading }) => {
                                 if (loading) {
                                     /*eslint-disable */
@@ -51,18 +85,8 @@ class Quiz extends Component {
                                 return (
                                     <div className="quiz">
                                         <Scoreboard />
-                                        { Questions.map(item => (
-                                            <QuizCard
-                                                key={item.id}
-                                                item={item}
-                                                isQuestionAnswered={isQuestionAnswered}
-                                                getQuestionId={questionId => this.setState({ questionId })}
-                                            />
-                                        ))}
-                                        { (pastQuestions.length === maxQuestions)
-                                            ? <FinishButton isQuestionAnswered={isQuestionAnswered} />
-                                            : <NextButton isQuestionAnswered={isQuestionAnswered} questionId={questionId} />
-                                        }
+                                        {DisplayQuizCards(Questions, isQuestionAnswered, pastQuestions.length, maxQuestions)}
+                                        {DisplayQuizButtons(isQuestionAnswered, pastQuestions.length, maxQuestions)}
                                     </div>
                                 );
                             }}

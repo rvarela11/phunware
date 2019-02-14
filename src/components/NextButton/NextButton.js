@@ -12,8 +12,12 @@ import { updateQuestionInfo } from '../QuizCard/mutations';
 const NextButton = (props) => {
     const {
         isQuestionAnswered,
+        maxQuestions,
+        pastQuestionsLength,
         questionId
     } = props;
+
+    const buttonLabel = (pastQuestionsLength === maxQuestions) ? 'Final' : 'Next';
     return (
         <Mutation mutation={updateQuestionInfo}>
             {updateQuestionInfo => (
@@ -35,7 +39,7 @@ const NextButton = (props) => {
                     size="large"
                     variant="contained"
                 >
-                    Next
+                    {buttonLabel}
                 </Button>
             )}
         </Mutation>
