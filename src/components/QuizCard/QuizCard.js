@@ -127,5 +127,4 @@ QuizCard.propTypes = {
     isQuestionAnswered: PropTypes.bool.isRequired
 };
 
-
 export default withStyles(styles)(QuizCard);
