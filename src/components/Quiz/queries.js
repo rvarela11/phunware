@@ -8,5 +8,7 @@ export const getQuestions = gql`
           options
           answer
         }
+        isQuestionAnswered @client
     }
+    
 `;
