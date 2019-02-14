@@ -1,0 +1,13 @@
+.scoreboard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #03223b;
+    border-radius: 5px;
+}
+
+.scoreboard__info {
+    color: #fff;
+    padding: 0 10px;
+}

@@ -12,17 +12,17 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 // @mutations
-import { updateIsQuestionAnswered } from './mutations';
+import { updateQuestionInfo } from './mutations';
 
 // @styles
-import './Card.scss';
+import './QuizCard.scss';
 import sassColors from '../../globals/scss/_colors.scss';
 
 // Setting material-ui classes
 const styles = {
     quizCard: {
-        width: '50%',
-        minHeight: '50vh',
+        height: '65vh',
+        marginTop: '10px',
         marginBottom: '10px'
     },
     quizCardOption__button: {
@@ -68,6 +68,7 @@ class QuizCard extends Component {
     render() {
         const {
             classes,
+            getQuestionId,
             item,
             isQuestionAnswered
         } = this.props;
@@ -81,8 +82,8 @@ class QuizCard extends Component {
                     <div className="quizCard__options">
                         { item.options.map((option, index) => (
                             <CardActions key={index}>
-                                <Mutation mutation={updateIsQuestionAnswered}>
-                                    {updateIsQuestionAnswered => (
+                                <Mutation mutation={updateQuestionInfo}>
+                                    {updateQuestionInfo => (
                                         <Button
                                             /*eslint-disable */
                                             className={(isQuestionAnswered) ? (indexOfCorrectAnswer === index) ? `${classes.quizCardOption__button_correct} ${classes.quizCardOption__button}` : `${classes.quizCardOption__button_incorrect} ${classes.quizCardOption__button}` : classes.quizCardOption__button}
@@ -90,7 +91,19 @@ class QuizCard extends Component {
                                             color="primary"
                                             disabled={isQuestionAnswered}
                                             fullWidth
-                                            onClick={() => updateIsQuestionAnswered({ variables: { isQuestionAnswered: true } })}
+                                            onClick={() => {
+                                                getQuestionId(item.id);
+                                                updateQuestionInfo(
+                                                    {
+                                                        variables:
+                                                        {
+                                                            isQuestionAnswered: true,
+                                                            isQuestionCorrect: (indexOfCorrectAnswer === index),
+                                                            questionId: null
+                                                        }
+                                                    }
+                                                );
+                                            }}
                                             size="large"
                                         >
                                             {option}
@@ -109,6 +122,7 @@ class QuizCard extends Component {
 
 QuizCard.propTypes = {
     classes: PropTypes.object.isRequired,
+    getQuestionId: PropTypes.func.isRequired,
     item: PropTypes.object.isRequired,
     isQuestionAnswered: PropTypes.bool.isRequired
 };

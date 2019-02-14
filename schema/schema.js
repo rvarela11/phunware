@@ -1,6 +1,7 @@
 const graphql = require('graphql');
 
 const {
+    GraphQLInt,
     GraphQLList,
     GraphQLObjectType,
     GraphQLSchema
@@ -13,6 +14,9 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         Questions: {
             resolve: questionsResolver,
+            args: {
+                pastQuestions: { type: new GraphQLList(GraphQLInt) }
+            },
             type: new GraphQLList(QuestionsType)
         }
     }

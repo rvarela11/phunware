@@ -4,7 +4,9 @@
 @import '../../globals/scss/typography';
 
 .quiz {
+    max-width: 50%;
     height: 97vh;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
