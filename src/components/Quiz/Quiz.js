@@ -9,6 +9,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Scoreboard from '../Scoreboard/Scoreboard';
 import QuizCard from '../QuizCard/QuizCard';
 import NextButton from '../NextButton/NextButton';
+import FinishButton from '../FinishButton/FinishButton';
 
 // @queries
 import { getQuizInfoFromState, getQuestions } from './queries';
@@ -49,10 +50,7 @@ class Quiz extends Component {
                                 }
                                 return (
                                     <div className="quiz">
-                                        <Scoreboard
-                                            maxQuestions={maxQuestions}
-                                            pastQuestions={pastQuestions}
-                                        />
+                                        <Scoreboard />
                                         { Questions.map(item => (
                                             <QuizCard
                                                 key={item.id}
@@ -61,10 +59,10 @@ class Quiz extends Component {
                                                 getQuestionId={questionId => this.setState({ questionId })}
                                             />
                                         ))}
-                                        <NextButton
-                                            isQuestionAnswered={isQuestionAnswered}
-                                            questionId={questionId}
-                                        />
+                                        { (pastQuestions.length === maxQuestions)
+                                            ? <FinishButton isQuestionAnswered={isQuestionAnswered} />
+                                            : <NextButton isQuestionAnswered={isQuestionAnswered} questionId={questionId} />
+                                        }
                                     </div>
                                 );
                             }}
