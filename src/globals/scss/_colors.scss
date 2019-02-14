@@ -4,6 +4,7 @@ $color__black: #000 !default;
 $color__white: #fff !default;
 $color__mid-gray: #a3a3a3 !default;
 $color__purple: #60607e !default;
+$color__dark-purple: #03223b !default;
 
 $color__light-red: #ef9a9a !default;
 $color__light-blue: #81d4fa !default;
@@ -15,6 +16,7 @@ $color__light-aqua: #80cbc4 !default;
     black: $color__black;
     white: $color__white;
     midGray: $color__mid-gray;
+    darkPurple: $color__dark-purple;
     purple: $color__purple;
     lightRed: $color__light-red;
     lightBlue: $color__light-blue;

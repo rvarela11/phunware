@@ -1,13 +1,18 @@
+// @styles
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/typography';
+
 .scoreboard {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #03223b;
-    border-radius: 5px;
+    background-color: $color__dark-purple;
+    border-radius: rem(5px);
 }
 
 .scoreboard__info {
-    color: #fff;
-    padding: 0 10px;
+    color: $color__white;
+    padding: 0 rem(10px);
 }

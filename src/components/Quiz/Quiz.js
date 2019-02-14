@@ -11,7 +11,7 @@ import QuizCard from '../QuizCard/QuizCard';
 import NextButton from '../NextButton/NextButton';
 
 // @queries
-import { getMaxAndPastQuestions, getQuestions } from './queries';
+import { getQuizInfoFromState, getQuestions } from './queries';
 
 // @styles
 import './Quiz.scss';
@@ -24,8 +24,9 @@ class Quiz extends Component {
     render() {
         const { questionId } = this.state;
         return (
-            <Query query={getMaxAndPastQuestions}>
-                {({ data: { pastQuestions }, loading }) => {
+            // Getting the pastQuestions array to pass as a varaible to the getQuestions query
+            <Query query={getQuizInfoFromState}>
+                {({ data: { maxQuestions, pastQuestions }, loading }) => {
                     if (loading) {
                         /*eslint-disable */
                         pastQuestions = [0];
@@ -35,6 +36,7 @@ class Quiz extends Component {
                         );
                     }
                     return (
+                        // This query will get all the questions and filter any pastQuestions
                         <Query query={getQuestions} variables={{ pastQuestions }}>
                             {({ data: { Questions, isQuestionAnswered }, loading }) => {
                                 if (loading) {
@@ -47,7 +49,10 @@ class Quiz extends Component {
                                 }
                                 return (
                                     <div className="quiz">
-                                        <Scoreboard />
+                                        <Scoreboard
+                                            maxQuestions={maxQuestions}
+                                            pastQuestions={pastQuestions}
+                                        />
                                         { Questions.map(item => (
                                             <QuizCard
                                                 key={item.id}

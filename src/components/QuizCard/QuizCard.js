@@ -69,8 +69,8 @@ class QuizCard extends Component {
         const {
             classes,
             getQuestionId,
-            item,
-            isQuestionAnswered
+            isQuestionAnswered,
+            item
         } = this.props;
         const { indexOfCorrectAnswer } = this.state;
         return (
@@ -123,8 +123,8 @@ class QuizCard extends Component {
 QuizCard.propTypes = {
     classes: PropTypes.object.isRequired,
     getQuestionId: PropTypes.func.isRequired,
-    item: PropTypes.object.isRequired,
-    isQuestionAnswered: PropTypes.bool.isRequired
+    isQuestionAnswered: PropTypes.bool.isRequired,
+    item: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(QuizCard);

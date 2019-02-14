@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-export const getMaxAndPastQuestions = gql`
-    query getMaxAndPastQuestions {
+export const getQuizInfoFromState = gql`
+    query getQuizInfoFromState {
         maxQuestions @client
         pastQuestions @client
     }

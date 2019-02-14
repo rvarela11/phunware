@@ -1,6 +1,6 @@
 export const defaults = {
     isQuestionAnswered: false,
-    grade: [],
+    correctAnswers: [],
     pastQuestions: [0],
     maxQuestions: 10
 };
@@ -11,7 +11,7 @@ export const resolvers = {
             cache.writeData({
                 data: {
                     isQuestionAnswered,
-                    grade: isQuestionCorrect ? defaults.grade.push(1) : null,
+                    correctAnswers: isQuestionCorrect ? defaults.correctAnswers.push(1) : null,
                     questionId: questionId ? defaults.pastQuestions.push(questionId) : null
                 }
             });
