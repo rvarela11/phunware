@@ -4,8 +4,9 @@
 @import '../../globals/scss/typography';
 
 .scoreboard {
-    width: 100%;
+    width: 60%;
     display: flex;
+    margin: rem(10px) 0;
     justify-content: space-between;
     align-items: center;
     background-color: $color__dark-purple;

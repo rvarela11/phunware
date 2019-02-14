@@ -5,10 +5,11 @@ $color__white: #fff !default;
 $color__mid-gray: #a3a3a3 !default;
 $color__purple: #60607e !default;
 $color__dark-purple: #03223b !default;
-
+$color__light-green: #a5d6a7 !default;
+$color__light-mid-green: #00f59e !default;
+$color__light-dark-green: #11c574 !default;
 $color__light-red: #ef9a9a !default;
 $color__light-blue: #81d4fa !default;
-$color__light-green: #a5d6a7 !default;
 $color__light-purple: #b39ddb !default;
 $color__light-aqua: #80cbc4 !default;
 
@@ -18,9 +19,11 @@ $color__light-aqua: #80cbc4 !default;
     midGray: $color__mid-gray;
     darkPurple: $color__dark-purple;
     purple: $color__purple;
+    lightGreen: $color__light-green;
+    lightMidGreen: $color__light-mid-green;
+    lightDarkGreen: $color__light-dark-green;
     lightRed: $color__light-red;
     lightBlue: $color__light-blue;
-    lightGreen: $color__light-green;
     lightPurple: $color__light-purple;
     lightAqua: $color__light-aqua;
   }

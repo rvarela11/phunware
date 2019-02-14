@@ -10,7 +10,6 @@ import Scoreboard from '../Scoreboard/Scoreboard';
 import QuizCard from '../QuizCard/QuizCard';
 import Results from '../Results/Results';
 import NextButton from '../NextButton/NextButton';
-import PlayAgainButton from '../PlayAgainButton/PlayAgainButton';
 
 // @queries
 import { getQuizInfoFromState, getQuestions } from './queries';
@@ -27,7 +26,7 @@ class Quiz extends Component {
         const { questionId } = this.state;
 
         const DisplayQuizCards = (Questions, isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
-            if (pastQuestionsLength > maxQuestions) {
+            if (pastQuestionsLength < maxQuestions) {
                 return (<Results />);
             }
             return (
@@ -43,10 +42,8 @@ class Quiz extends Component {
         };
 
         const DisplayQuizButtons = (isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
-            if (pastQuestionsLength > maxQuestions) {
-                return (
-                    <PlayAgainButton isQuestionAnswered={isQuestionAnswered} />
-                );
+            if (pastQuestionsLength < maxQuestions) {
+                return null;
             }
             return (
                 <NextButton

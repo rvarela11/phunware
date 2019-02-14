@@ -5,7 +5,7 @@
 
 .header {
     display: flex;
-    padding: $spacing-2xs;
+    padding: $spacing-md;
     border-bottom: 1px solid $color__mid-gray;
 }
 
@@ -15,7 +15,7 @@
     background-size: contain;
     background-position: center;
     flex-grow: 1;
-    height: rem(80px);
+    height: rem(60px);
     margin: 0;
     padding: 0;
 }

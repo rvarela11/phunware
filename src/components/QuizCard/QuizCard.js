@@ -21,9 +21,9 @@ import sassColors from '../../globals/scss/_colors.scss';
 // Setting material-ui classes
 const styles = {
     quizCard: {
-        height: '65vh',
-        marginTop: '10px',
-        marginBottom: '10px'
+        width: '60%',
+        height: '100vh',
+        overflowY: 'scroll'
     },
     quizCardOption__button: {
         justifyContent: 'flex-start',
