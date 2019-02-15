@@ -20,7 +20,7 @@ import sassColors from '../../globals/scss/_colors.scss';
 
 // Setting material-ui classes
 const styles = theme => ({
-    quizCard: {
+    quiz_card: {
         width: '60%',
         height: '100vh',
         overflowY: 'scroll',
@@ -28,7 +28,7 @@ const styles = theme => ({
             width: '95%'
         }
     },
-    quizCardOption__button: {
+    quiz_card_option__button: {
         justifyContent: 'flex-start',
         fontSize: '1.10rem',
         backgroundColor: sassColors.purple,
@@ -40,13 +40,13 @@ const styles = theme => ({
             fontSize: '1rem'
         }
     },
-    quizCardOption__button_correct: {
+    quiz_card_option__button_correct: {
         backgroundColor: sassColors.lightGreen,
         '&:disabled': {
             color: sassColors.white
         }
     },
-    quizCardOption__button_incorrect: {
+    quiz_card_option__button_incorrect: {
         backgroundColor: sassColors.lightRed
     },
     typography_media_query: {
@@ -85,7 +85,7 @@ class QuizCard extends Component {
         } = this.props;
         const { indexOfCorrectAnswer } = this.state;
         return (
-            <Card className={classes.quizCard}>
+            <Card className={classes.quiz_card}>
                 <CardContent>
                     <Typography className={classes.typography_media_query} variant="h5">
                         {item.question}
@@ -97,7 +97,7 @@ class QuizCard extends Component {
                                     {updateQuestionInfo => (
                                         <Button
                                             /*eslint-disable */
-                                            className={(isQuestionAnswered) ? (indexOfCorrectAnswer === index) ? `${classes.quizCardOption__button_correct} ${classes.quizCardOption__button}` : `${classes.quizCardOption__button_incorrect} ${classes.quizCardOption__button}` : classes.quizCardOption__button}
+                                            className={(isQuestionAnswered) ? (indexOfCorrectAnswer === index) ? `${classes.quiz_card_option__button_correct} ${classes.quiz_card_option__button}` : `${classes.quiz_card_option__button_incorrect} ${classes.quiz_card_option__button}` : classes.quiz_card_option__button}
                                             /* eslint-enable */
                                             color="primary"
                                             disabled={isQuestionAnswered}

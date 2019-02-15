@@ -3,10 +3,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 // @components
-import Card from '../Card';
+import QuizCard from '../QuizCard';
 
-describe('Card Container', () => {
-    it('renders Card without crashing', () => {
-        shallow(<Card item={{}} />);
+describe('QuizCard Container', () => {
+    it('renders QuizCard without crashing', () => {
+        shallow(
+            <QuizCard
+                key={1}
+                item={{}}
+                isQuestionAnswered
+                getQuestionId={() => {}}
+            />
+        );
     });
 });

@@ -69,7 +69,11 @@ class Quiz extends Component {
                     }
                     return (
                         // This query will get all the questions and filter any pastQuestions
-                        <Query query={getQuestions} variables={{ pastQuestions }} skip={pastQuestions.length > maxQuestions}>
+                        <Query
+                            query={getQuestions}
+                            variables={{ pastQuestions }}
+                            skip={pastQuestions.length > maxQuestions}
+                        >
                             {({ data: { Questions, isQuestionAnswered }, loading }) => {
                                 if (loading) {
                                     /*eslint-disable */
@@ -82,7 +86,12 @@ class Quiz extends Component {
                                 return (
                                     <div className="quiz">
                                         <Scoreboard />
-                                        {DisplayQuizCards(Questions, isQuestionAnswered, pastQuestions.length, maxQuestions)}
+                                        {DisplayQuizCards(
+                                            Questions,
+                                            isQuestionAnswered,
+                                            pastQuestions.length,
+                                            maxQuestions
+                                        )}
                                         {DisplayQuizButtons(isQuestionAnswered, pastQuestions.length, maxQuestions)}
                                     </div>
                                 );

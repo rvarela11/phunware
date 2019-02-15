@@ -14,7 +14,7 @@ import { defaults } from '../../state';
 
 // Setting material-ui classes
 const styles = theme => ({
-    resultsCard: {
+    results_card: {
         width: '60%',
         height: '100vh',
         overflowY: 'scroll',
@@ -45,13 +45,15 @@ const styles = theme => ({
 const Results = (props) => {
     const { classes } = props;
     const { correctAnswers } = defaults;
-    const DisplayMessage = (correctAnswers.length < 10) ? `You got a ${correctAnswers.length * 10}% score?! Why not aim for 100%. It'd be a lot cooler if you did.` : 'You got a 100% score!. Alright, alright, alright!';
+    const DisplayMessage = (correctAnswers.length < 10)
+        ? `You got a ${correctAnswers.length * 10}% score?! Why not aim for 100%. It'd be a lot cooler if you did.`
+        : 'You got a 100% score!. Alright, alright, alright!';
     return (
         /*eslint-disable */
-        <Card className={classes.resultsCard}>
+        <Card className={classes.results_card}>
             <CardContent>
                 <Typography 
-                    className={[classes.results_info, classes.typography_media_query]} 
+                    className={`${classes.results_info} ${classes.typography_media_query}`} 
                     variant='h5'
                 > 
                     Correct: {correctAnswers.length} / Incorrect: {10 - correctAnswers.length} 
@@ -65,7 +67,7 @@ const Results = (props) => {
                     title='Matthew Mcconaughey'
                 />
                 <Typography 
-                    className={[classes.message, classes.typography_media_query]} 
+                    className={`${classes.message} ${classes.typography_media_query}`} 
                     variant='h5'
                 > 
                     {DisplayMessage}

@@ -70,4 +70,3 @@ NextButton.defaultProps = {
 };
 
 export default withStyles(styles)(NextButton);
-
