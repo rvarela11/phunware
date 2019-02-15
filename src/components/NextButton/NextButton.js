@@ -26,8 +26,9 @@ const NextButton = (props) => {
         pastQuestionsLength,
         questionId
     } = props;
+    // This boolean will set the buttonLabel and the color of the button
     const isLastQuestion = (pastQuestionsLength === maxQuestions);
-    const buttonLabel = (isLastQuestion) ? 'Final' : 'Next';
+    const buttonLabel = (isLastQuestion) ? 'Finish' : 'Next';
     return (
         <Mutation mutation={updateQuestionInfo}>
             {updateQuestionInfo => (

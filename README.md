@@ -16,3 +16,8 @@ Austin trivia quiz app
 2. Eslint Airbnb
 3. Enzyme
 4. Material UI
+
+### Run on http://localhost:3000/
+
+1. npm install
+2. npm run start:dev

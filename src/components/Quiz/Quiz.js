@@ -69,6 +69,8 @@ class Quiz extends Component {
                     }
                     return (
                         // This query will get all the questions and filter any pastQuestions
+                        // Skip is used because when the finish button is clicked the pastQuestions > maxQuestions
+                        // The pastQuestions > maxQuestions is used to show/hide nextbutton and switch between QuizCard and Results
                         <Query
                             query={getQuestions}
                             variables={{ pastQuestions }}

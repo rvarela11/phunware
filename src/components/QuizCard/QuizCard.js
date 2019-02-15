@@ -66,7 +66,7 @@ class QuizCard extends Component {
     }
 
     // Getting the index of the correct answer
-    // This will set the green (correct) or red (incorrect) button colors after a user clicks on an option
+    // This will set the green (correct) or red (incorrect) button colors after a user clicks an option
     getIndexOfCorrectAnswer = () => {
         const { item: { answer, options } } = this.props;
         options.forEach((option, index) => {
