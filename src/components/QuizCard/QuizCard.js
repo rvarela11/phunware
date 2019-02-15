@@ -19,11 +19,14 @@ import './QuizCard.scss';
 import sassColors from '../../globals/scss/_colors.scss';
 
 // Setting material-ui classes
-const styles = {
+const styles = theme => ({
     quizCard: {
         width: '60%',
         height: '100vh',
-        overflowY: 'scroll'
+        overflowY: 'scroll',
+        [theme.breakpoints.between('xs', 'sm')]: {
+            width: '95%'
+        }
     },
     quizCardOption__button: {
         justifyContent: 'flex-start',
@@ -32,6 +35,9 @@ const styles = {
         color: sassColors.white,
         '&:hover': {
             background: sassColors.lightPurple
+        },
+        [theme.breakpoints.between('xs', 'sm')]: {
+            fontSize: '1rem'
         }
     },
     quizCardOption__button_correct: {
@@ -42,8 +48,13 @@ const styles = {
     },
     quizCardOption__button_incorrect: {
         backgroundColor: sassColors.lightRed
+    },
+    typography_media_query: {
+        [theme.breakpoints.between('xs', 'sm')]: {
+            fontSize: '1.25rem'
+        }
     }
-};
+});
 
 class QuizCard extends Component {
     state = {
@@ -76,7 +87,7 @@ class QuizCard extends Component {
         return (
             <Card className={classes.quizCard}>
                 <CardContent>
-                    <Typography variant="h5" component="h2">
+                    <Typography className={classes.typography_media_query} variant="h5">
                         {item.question}
                     </Typography>
                     <div className="quizCard__options">

@@ -26,7 +26,7 @@ class Quiz extends Component {
         const { questionId } = this.state;
 
         const DisplayQuizCards = (Questions, isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
-            if (pastQuestionsLength < maxQuestions) {
+            if (pastQuestionsLength > maxQuestions) {
                 return (<Results />);
             }
             return (
@@ -42,7 +42,7 @@ class Quiz extends Component {
         };
 
         const DisplayQuizButtons = (isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
-            if (pastQuestionsLength < maxQuestions) {
+            if (pastQuestionsLength > maxQuestions) {
                 return null;
             }
             return (

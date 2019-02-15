@@ -17,3 +17,11 @@
     color: $color__white;
     padding: 0 rem(10px);
 }
+
+/*---------------- @media -------------------*/
+
+@media screen and (max-width: 959.95px) {
+    .scoreboard {
+        width: 95%;
+    }
+  }
