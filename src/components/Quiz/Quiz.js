@@ -25,9 +25,9 @@ class Quiz extends Component {
     render() {
         const { questionId } = this.state;
 
-        const DisplayQuizCards = (Questions, isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
+        const DisplayQuizCards = (Questions, correctAnswers, isQuestionAnswered, pastQuestionsLength, maxQuestions) => {
             if (pastQuestionsLength > maxQuestions) {
-                return (<Results />);
+                return (<Results correctAnswers={correctAnswers} />);
             }
             return (
                 Questions.map(item => (
@@ -58,7 +58,7 @@ class Quiz extends Component {
         return (
             // Getting the pastQuestions array to pass as a varaible to the getQuestions query
             <Query query={getQuizInfoFromState}>
-                {({ data: { maxQuestions, pastQuestions }, loading }) => {
+                {({ data: { correctAnswers, maxQuestions, pastQuestions }, loading }) => {
                     if (loading) {
                         /*eslint-disable */
                         pastQuestions = [0];
@@ -87,9 +87,14 @@ class Quiz extends Component {
                                 }
                                 return (
                                     <div className="quiz">
-                                        <Scoreboard />
+                                        <Scoreboard
+                                            correctAnswers={correctAnswers}
+                                            maxQuestions={maxQuestions}
+                                            pastQuestions={pastQuestions}
+                                        />
                                         {DisplayQuizCards(
                                             Questions,
+                                            correctAnswers,
                                             isQuestionAnswered,
                                             pastQuestions.length,
                                             maxQuestions

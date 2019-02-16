@@ -9,9 +9,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-// @state
-import { defaults } from '../../state';
-
 // Setting material-ui classes
 const styles = theme => ({
     results_card: {
@@ -43,10 +40,9 @@ const styles = theme => ({
 });
 
 const Results = (props) => {
-    const { classes } = props;
-    const { correctAnswers } = defaults;
-    const DisplayMessage = (correctAnswers.length < 10)
-        ? `You got a ${correctAnswers.length * 10}% score?! Why not aim for 100%. It'd be a lot cooler if you did.`
+    const { classes, correctAnswers } = props;
+    const DisplayMessage = (correctAnswers < 10)
+        ? `You got a ${correctAnswers * 10}% score?! Why not aim for 100%. It'd be a lot cooler if you did.`
         : 'You got a 100% score!. Alright, alright, alright!';
     return (
         /*eslint-disable */
@@ -56,11 +52,11 @@ const Results = (props) => {
                     className={`${classes.results_info} ${classes.typography_media_query}`} 
                     variant='h5'
                 > 
-                    Correct: {correctAnswers.length} / Incorrect: {10 - correctAnswers.length} 
+                    Correct: {correctAnswers} / Incorrect: {10 - correctAnswers} 
                 </Typography>
                 <CardMedia
                     className={classes.media}
-                    image={(correctAnswers.length < 10) 
+                    image={(correctAnswers < 10) 
                         ? 'https://media1.tenor.com/images/59c2dda858ea7e6cde42ec72315ff606/tenor.gif?itemid=5205414'
                         : 'https://media.giphy.com/media/g5zvwUa9720pO/giphy.gif'
                     }
@@ -79,7 +75,8 @@ const Results = (props) => {
 };
 
 Results.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    correctAnswers: PropTypes.number.isRequired
 };
 
 export default withStyles(styles)(Results);

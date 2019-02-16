@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 
 export const getQuizInfoFromState = gql`
     query getQuizInfoFromState {
+        correctAnswers @client
         maxQuestions @client
         pastQuestions @client
     }
